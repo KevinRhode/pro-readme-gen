@@ -9,6 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.3.1"
-  }
+    "inquirer": "^8.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinRhode/pro-readme-gen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KevinRhode/pro-readme-gen/issues"
+  },
+  "homepage": "https://github.com/KevinRhode/pro-readme-gen#readme"
 }

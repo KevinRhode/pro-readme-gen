@@ -1,9 +1,29 @@
 // TODO: Include packages needed for this application
-const inquirer = require('fs');
+const fs = require('fs');
+
 // TODO: Create an array of questions for user input
 const questions = [
 
-    
+    {
+        type: 'input',
+        name: 'name',
+        message: "What is Title of this README?",
+        title: "title" ,
+        pre: '',
+        
+    },
+    {
+        type: 'input',
+        name: 'name',
+        message: "What is the description of this README?",
+        title: "description" ,
+        pre: '',
+        
+    },
+   
+
+
+
 
 ];
 

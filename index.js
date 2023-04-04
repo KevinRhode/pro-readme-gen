@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
+const generateMarkDown = require('./utils/generateMarkdown.js');
+const { default: inquirer } = require('inquirer');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -89,6 +91,16 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
 
+const filename = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'generatedREADME.md';
+// const filenamejson = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'readMeData.json';
+// const logFilename = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'logs.txt';
+
+    if (process.argv.length > 2) {
+
+    }
+    inquirer.prompt(...questions).then((response)=>{
+        writeToFile(filename,generateMarkDown.generateMarkDown(response));
+    });
 
 }
 

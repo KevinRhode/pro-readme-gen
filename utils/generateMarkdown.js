@@ -10,35 +10,35 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
-// TODO: 
-function changethis(setorremovve) {}
+// // TODO: 
+// function changethis(setorremovve) {}
 
 // AC: TODO
 //  title of my project 
@@ -51,8 +51,9 @@ function changethis(setorremovve) {}
 // Tests, 
 // and Questions
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+function generateMarkdown({title,description}) {
+  return `# ${title}
+  ## Description\n${description}
 
 `;
 }

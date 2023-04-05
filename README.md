@@ -1,5 +1,5 @@
 # pro-readme-gen
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/)
 ## Description
   To create a CLI application using Node.js. To speed up creating a professional readme for projects I work on. It helps me solve time management in quickly creating a README and allowing me to move onto other tasks. I learned Node.js, working with Inquirer, for in, for of
 ## Table of Contents
@@ -30,11 +30,12 @@
 ## Credits
  - [Starter](https://github.com/coding-boot-camp/potential-enigma)
  - [Badges](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
+ - [Inquirer](https://github.com/SBoudrias/Inquirer.js)
  - [Felt Bloated so I restarted](https://github.com/KevinRhode/GenREADME)
 ## Tests
   None at this time.  
 ## License
-Apache License 2.0 - https://choosealicense.com/licenses/apache-2.0/
+MIT License - https://choosealicense.com/licenses/mit/
 ## Questions
 [KevinRhode](https://github.com/KevinRhode)  
 [Link to Repo](https://github.com/KevinRhode/pro-readme-gen)  

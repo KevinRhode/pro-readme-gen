@@ -1,14 +1,45 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+      
+    switch (license) {
+      case 'GNU GPLv3':      
+        return '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)';
+      case 'Apache License 2.0':      
+      return '![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)';
+      case 'MIT License':      
+      return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)';  
+      default:
+        return '';
+    }
+    
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  switch (license) {
+    case 'GNU GPLv3':      
+      return 'https://choosealicense.com/licenses/gpl-3.0/';
+    case 'Apache License 2.0':      
+    return 'https://choosealicense.com/licenses/apache-2.0/';
+    case 'MIT License':      
+    return 'https://choosealicense.com/licenses/mit/';  
+    default:
+      return '';
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+// unused
+function renderLicenseSection(license) {
+  if (license === '') {
+    return '';
+  } else {
+
+  }
+}
 
 // TODO: Create the Table of Contents
 function renderTableOfContents(data) {
@@ -48,37 +79,19 @@ function renderTableOfContents(data) {
 
 }
 
-// TODO: 
+// TODO: Create the link and email for Questions
 function renderQuestions({userName,email}) {
   return `[${userName}](https://github.com/${userName})\n  \n${email}`;
 }
 
 // TODO: 
-function renderContributing(contributing) {}
+// function renderContributing(contributing) {}
 
-// // TODO: 
-// function changethis(setorremovve) {}
-
-// // TODO: 
-// function changethis(setorremovve) {}
-
-// // TODO: 
-// function changethis(setorremovve) {}
-
-// // TODO: 
-// function changethis(setorremovve) {}
-
-// // TODO: 
-// function changethis(setorremovve) {}
-
-// // TODO: 
-// function changethis(setorremovve) {}
-
-// // TODO: 
+// TODO: 
 // function changethis(setorremovve) {}
 
 // AC: TODO
-//  title of my project 
+// title of my project 
 // and sections entitled Description, 
 // Table of Contents, 
 // Installation, 
@@ -87,11 +100,12 @@ function renderContributing(contributing) {}
 // Contributing, 
 // Tests, 
 // and Questions
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const {title,description,installation,usage,contributing,tests,license,questions} = data;
 
-  return `# ${title}\nBADGE\n## Description\n${description}\n## Table of Contents\n${renderTableOfContents(data)}\n## Installation\n${installation}\n## Usage\n${usage}\n## Contributing\n${contributing}\n## Tests\n${tests}\n## License\n${license}\n## Questions\n${renderQuestions(questions)}`;
+  return `# ${title}\n[${renderLicenseBadge(license)}](${renderLicenseLink(license)})\n## Description\n${description}\n## Table of Contents\n${renderTableOfContents(data)}\n## Installation\n${installation}\n## Usage\n${usage}\n## Contributing\n${contributing}\n## Tests\n${tests}\n## License\n${license} - ${renderLicenseLink(license)}\n## Questions\n${renderQuestions(questions)}`;
 }
 
 module.exports = generateMarkdown;

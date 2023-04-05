@@ -1,6 +1,9 @@
 // TODO: Include packages needed for this application
+// include the file system
 const fs = require('fs/promises');
+// include the exported js generatemarkdown located in the utils folder
 const generateMarkDown = require('./utils/generateMarkdown.js');
+// include the inquirer module
 const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
@@ -27,17 +30,22 @@ const questions = [
       name: 'usage',     
     },
     {
-      type:'input',
-      message:'Enter description',
-      name: `contributing.desc`,
-      prefix: `Enter info for contributer links, description first then link\n`,
+        type:'input',
+        message:'Enter Contributing guidelines for users',
+        name: `contributing` 
+    },
+    // {
+    //   type:'input',
+    //   message:'Enter description',
+    //   name: `contributing.desc`,
+    //   prefix: `Enter info for contributer links, description first then link\n`,
       
-    },    
-    {
-      type:'input',
-      message:'Enter Link',
-      name: `contributing.src`      
-    },  
+    // },    
+    // {
+    //   type:'input',
+    //   message:'Enter Link',
+    //   name: `contributing.src`      
+    // },  
     {
       type:'input',
       message:'Enter Guidelines for testing',
@@ -63,22 +71,26 @@ const questions = [
 
 // TODO: Create a function to write README file
 async function writeToFile(fileName, data) {
+//create log file name based of location
 const logFilename = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'logs.txt';
+//append the log file to contain data used during program run
 fs.appendFile(logFilename,JSON.stringify(data));
+//write file to create a new generated readme based on the information input
 fs.writeFile(fileName,generateMarkDown(data))
 
 }
 
 // TODO: Create a function to initialize app
 async function init() {
-
+  //set filename for the generated readme
   const filename = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'generatedREADME.md';
   // const filenamejson = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'readMeData.json';
   
-
+  // check if someone added arguments when calling index.js
   if (process.argv.length > 2) {
-  
+    //test on key, see what they added
     switch (process.argv[3]) {
+        //future implmentation
         case value:
             //add: commands after - load last json
             break;
@@ -92,9 +104,11 @@ async function init() {
 
   } else {
 
+    //a sync function to await all questions before response, then async to make sure await, along with fs import (fs/promises)
     await inquirer.prompt(questions).then(async (response) =>{
-        console.log(response);
-        
+        //log the response for testing
+        // console.log(response);
+        //call write to file function to handle fs implementation
         writeToFile(filename,response);        
     });   
     

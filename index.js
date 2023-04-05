@@ -30,7 +30,7 @@ const questions = [
       type:'input',
       message:'Enter description',
       name: `contributing.desc`,
-      prefix: `Enter info for contributer links, description first then link\n  `,
+      prefix: `Enter info for contributer links, description first then link\n`,
       
     },    
     {
@@ -63,7 +63,8 @@ const questions = [
 
 // TODO: Create a function to write README file
 async function writeToFile(fileName, data) {
-
+const logFilename = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'logs.txt';
+fs.appendFile(logFilename,JSON.stringify(data));
 fs.writeFile(fileName,generateMarkDown(data))
 
 }
@@ -73,10 +74,22 @@ async function init() {
 
   const filename = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'generatedREADME.md';
   // const filenamejson = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'readMeData.json';
-  // const logFilename = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\") + 1) + 'logs.txt';
+  
 
   if (process.argv.length > 2) {
   
+    switch (process.argv[3]) {
+        case value:
+            //add: commands after - load last json
+            break;
+        case value:
+            //add: maybe no TOC
+            break;       
+    
+        default:
+            break;
+    }
+
   } else {
 
     await inquirer.prompt(questions).then(async (response) =>{

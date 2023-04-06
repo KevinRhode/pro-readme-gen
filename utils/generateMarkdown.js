@@ -46,15 +46,12 @@ function renderTableOfContents(data) {
 
   let tOC = '';
   //for in https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
-    for (const property in data) {
-      
+    for (const property in data) {      
       //take the property and make a copy to manipulate for style
-      let tOCR = property;
-      
+      let tOCR = property;      
       //go through the entire string
       for (let i = 0; i < tOCR.length;) {
-        const element = tOCR[i];
-        
+        const element = tOCR[i];        
         //check if each char is a capital - if so add space and continue
         if (element.match(/[A-Z]/) != null) {          
           tOCR = `${tOCR.slice(0,i)} ${tOCR.slice(i,tOCR.length)}`;
@@ -62,26 +59,30 @@ function renderTableOfContents(data) {
           i++;
         }
         i++;
-
       }    
       //styleing for table of contents property
       //capitalize the first letter
       let char = tOCR[0].toUpperCase();
-      tOCR = char + tOCR.slice(1,tOCR.length);
-      
+      tOCR = char + tOCR.slice(1,tOCR.length);      
       //check if property is empty, or if labeled title
-      `${data[property]}` === ''  ? console.log('Nope'): `${property}` === 'title'  ? null : tOC +=`- \[${tOCR}\](#${tOCR.toLowerCase().replace(' ','-')})\n`;
-      
+      `${data[property]}` === ''  ? console.log('Nope'): `${property}` === 'title'  ? null : tOC +=`- \[${tOCR}\](#${tOCR.toLowerCase().replace(' ','-')})\n`;      
     }
-
     return tOC;
-
-
 }
 
 // TODO: Create the link and email for Questions
 function renderQuestions({userName,email}) {
   return `[${userName}](https://github.com/${userName})\n  \n${email}`;
+}
+
+function handleDoubleSpacing(data){
+  let pretty = '';
+  const splitData = data.split('  ');
+  console.log("splitData:",splitData);
+  for (const newLine of splitData) {
+    pretty += `${newLine}  \n`
+  }
+  return pretty;
 }
 
 // TODO: 
@@ -105,7 +106,7 @@ function renderQuestions({userName,email}) {
 function generateMarkdown(data) {
   const {title,description,installation,usage,contributing,tests,license,questions} = data;
 
-  return `# ${title}\n[${renderLicenseBadge(license)}](${renderLicenseLink(license)})\n## Description\n${description}\n## Table of Contents\n${renderTableOfContents(data)}\n## Installation\n${installation}\n## Usage\n${usage}\n## Contributing\n${contributing}\n## Tests\n${tests}\n## License\n${license} - ${renderLicenseLink(license)}\n## Questions\n${renderQuestions(questions)}`;
+  return `# ${title}\n[${renderLicenseBadge(license)}](${renderLicenseLink(license)})\n## Description\n${description}\n## Table of Contents\n${renderTableOfContents(data)}\n## Installation\n${handleDoubleSpacing(installation)}\n## Usage\n${handleDoubleSpacing(usage)}\n## Contributing\n${contributing}\n## Tests\n${tests}\n## License\n${license} - ${renderLicenseLink(license)}\n## Questions\n${renderQuestions(questions)}`;
 }
 
 module.exports = generateMarkdown;

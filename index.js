@@ -36,7 +36,11 @@ const logFilename = process.argv[1].substring(0,process.argv[1].lastIndexOf("\\"
 //append the log file to contain data used during program run
 fs.appendFile(logFilename,JSON.stringify(data));
 //write file to create a new generated readme based on the information input
-fs.writeFile(fileName,generateMarkDown(data))
+fs.writeFile(fileName,generateMarkDown(data));
+}
+// TODO: load json into readme
+async function loadjson(filename,data){
+  fs.writeFile(filename,generateMarkDown(data));
 }
 // TODO: Create a function to initialize app
 async function init() {
@@ -46,13 +50,21 @@ async function init() {
   // check if someone added arguments when calling index.js
   if (process.argv.length > 2) {
     //test on key, see what they added
-    switch (process.argv[3]) {
+    switch (process.argv[2]) {
         //future implmentation
-        case value:
-            //add: commands after - load last json
+        case 'obj':
+            //add: commands after - load json
+            await inquirer.prompt([new question('input','data','Enter json string')]).then(async (response)=>{
+              const {data} = response;              
+              const jObj = JSON.parse(data);
+              console.log(jObj);
+              loadjson(filename,jObj);
+            });
+            
             break;
-        case value:
-            //add: maybe no TOC
+        case 'LL':
+            //add: TODO: Load last json
+            
             break;       
     
         default:
@@ -63,7 +75,7 @@ async function init() {
     //a sync function to await all questions before response, then async to make sure await, along with fs import (fs/promises)
     await inquirer.prompt(questions).then(async (response) =>{
         //log the response for testing
-        // console.log(response);
+        console.log(response);
         //call write to file function to handle fs implementation
         writeToFile(filename,response);        
     });       

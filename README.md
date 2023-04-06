@@ -40,7 +40,7 @@ THEN I am taken to the corresponding section of the README
   [DownloadLinks](https://nodejs.org/download/release/v16.18.0/)  
   Install Node.js, once done move onto next
   Navigate to index.js file location in terminal  
-  npm - npm i   
+  npm - npm install  
   inquirer - npm install inquirer@8.2.4  
 ## Usage
   Navigate to index.js file location in terminal  

@@ -11,119 +11,23 @@ class question {
     this.type = type;
     this.name = name;
     this.message = message;
-    this.choices = choices?.value;    
+    this.choices = choices;    
     //choices === undefined ? '' : choices;
   }
 }
 // TODO: Create an array of questions for user input
 const questions = [
 
-  new question(
-    'input',
-    'title',
-    'What is Title of this README?'
-  ),
-  new question(
-    'input',
-    'description',
-    'What is the description of this README?'
-  ),
-  new question(
-    'input',
-    'installation',
-    'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.'
-  ),
-  new question(
-    'input',
-    'title',
-    'Provide instructions and examples for use. Include screenshots as needed.'
-  ),
-  new question(
-    'input',
-    'contributing',
-    'Enter Contributing guidelines for users'
-  ),
-  new question(
-    'input',
-    'tests',
-    'Enter Guidelines for testing'
-  ),
-  new question(
-    'list',
-    'license',
-    'What license will this project be covered by?',
-    ['GNU GPLv3', 'Apache License 2.0', 'MIT License']
-  ),
-  new question(
-    'input',
-    'questions.userName',
-    'Enter GitHub username:'
-  ),
-  new question(
-    'input',
-    'questions.email',
-    'Enter email to be reached at:',
-  )
+  new question('input','title','What is Title of this README?'),
+  new question('input','description','What is the description of this README?'),
+  new question('input','installation','What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.'),
+  new question('input','usage','Provide instructions and examples for use. Include screenshots as needed.'),
+  new question('input','contributing','Enter Contributing guidelines for users'),
+  new question('input','tests','Enter Guidelines for testing'),
+  new question('list','license','What license will this project be covered by?',['GNU GPLv3', 'Apache License 2.0', 'MIT License']),
+  new question('input','questions.userName','Enter GitHub username:'),
+  new question('input','questions.email','Enter email to be reached at:')
   
-    // {
-
-    //     type: 'input',
-    //     name: 'title',
-    //     message: "What is Title of this README?",       
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'description',
-    //     message: "What is the description of this README?",        
-    // },
-    // {
-    //   type: 'input',
-    //   name: 'installation',
-    //   message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
-    // },
-    // {
-    //   type: 'input',
-    //   message: 'Provide instructions and examples for use. Include screenshots as needed.',
-    //   name: 'usage',     
-    // },
-    // {
-    //     type:'input',
-    //     message:'Enter Contributing guidelines for users',
-    //     name: `contributing` 
-    // },
-    // {
-    //   type:'input',
-    //   message:'Enter description',
-    //   name: `contributing.desc`,
-    //   prefix: `Enter info for contributer links, description first then link\n`,
-      
-    // },    
-    // {
-    //   type:'input',
-    //   message:'Enter Link',
-    //   name: `contributing.src`      
-    // },  
-    // {
-    //   type:'input',
-    //   message:'Enter Guidelines for testing',
-    //   name: 'tests',
-    // },
-    // {
-    //   type: 'list',
-    //   message: 'What license will this project be covered by?',
-    //   name: 'license',
-    //   choices: ['GNU GPLv3', 'Apache License 2.0', 'MIT License'],
-    // },
-    // {
-    //   type:'input',
-    //   message:'Enter GitHub username:',
-    //   name: 'questions.userName',
-    // },
-    // {
-    //   type:'input',
-    //   message:'Enter email to be reached at:',
-    //   name: 'questions.email',
-    // }
 ];
 // TODO: Create a function to write README file
 async function writeToFile(fileName, data) {

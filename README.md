@@ -47,7 +47,6 @@ THEN I am taken to the corresponding section of the README
   Navigate to index.js file location in terminal  
   Node index.js  
   this will start the program, and begin asking for user inputs
-
   
   added arguments:
     'json' - will take user input and except and Obj.

@@ -41,24 +41,42 @@ THEN I am taken to the corresponding section of the README
   Install Node.js, once done move onto next
   Navigate to index.js file location in terminal  
   npm - npm install  
-  inquirer - npm install inquirer@8.2.4  
+  
+
 ## Usage
   Navigate to index.js file location in terminal  
   Node index.js  
   this will start the program, and begin asking for user inputs
 
-  coming soon..
-  added arguments
+  
+  added arguments:
+    'json' - will take user input and except and Obj.
+
+    Example Obj:
+      {
+        "title":"",
+        "description":"",
+        "installation":"",
+        "usage":"",
+        "contributing":"",
+        "tests":"",
+        "license":"MIT License",
+        "questions":{"userName":"","email":""}
+      }
+
 
 ## Credits
  - [Starter](https://github.com/coding-boot-camp/potential-enigma)
  - [Badges](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
  - [Inquirer](https://github.com/SBoudrias/Inquirer.js)
  - [Felt Bloated so I restarted](https://github.com/KevinRhode/GenREADME)
+
 ## Tests
   None at this time.  
+
 ## License
 MIT License - https://choosealicense.com/licenses/mit/
+
 ## Questions
 [KevinRhode](https://github.com/KevinRhode)  
 [Link to Repo](https://github.com/KevinRhode/pro-readme-gen)  

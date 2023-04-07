@@ -37,7 +37,7 @@ function renderLicenseSection(license) {
   if (license === '') {
     return '';
   } else {
-
+    return `## License\n${license} - ${renderLicenseLink(license)}`;
   }
 }
 
@@ -106,7 +106,7 @@ function handleDoubleSpacing(data){
 function generateMarkdown(data) {
   const {title,description,installation,usage,contributing,tests,license,questions} = data;
 
-  return `# ${title}\n[${renderLicenseBadge(license)}](${renderLicenseLink(license)})\n## Description\n${description}\n## Table of Contents\n${renderTableOfContents(data)}\n## Installation\n${handleDoubleSpacing(installation)}\n## Usage\n${handleDoubleSpacing(usage)}\n## Contributing\n${contributing}\n## Tests\n${tests}\n## License\n${license} - ${renderLicenseLink(license)}\n## Questions\n${renderQuestions(questions)}`;
+  return `# ${title}\n[${renderLicenseBadge(license)}](${renderLicenseLink(license)})\n## Description\n${description}\n## Table of Contents\n${renderTableOfContents(data)}\n## Installation\n${handleDoubleSpacing(installation)}\n## Usage\n${handleDoubleSpacing(usage)}\n## Contributing\n${contributing}\n## Tests\n${tests}\n${renderLicenseSection(license)}\n## Questions\n${renderQuestions(questions)}`;
 }
 
 module.exports = generateMarkdown;

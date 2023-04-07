@@ -44,6 +44,8 @@ THEN I am taken to the corresponding section of the README
   
 
 ## Usage
+
+  [Demo](https://drive.google.com/file/d/196gsJQfJ6eWoitT-k-ziW1uDoGUZ2DfP/view)  
   Navigate to index.js file location in terminal  
   Node index.js  
   this will start the program, and begin asking for user inputs

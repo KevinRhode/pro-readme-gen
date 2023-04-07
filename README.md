@@ -47,6 +47,8 @@ THEN I am taken to the corresponding section of the README
   Navigate to index.js file location in terminal  
   Node index.js  
   this will start the program, and begin asking for user inputs
+
+  when entering installation questions and usage questions a double space will be taken as a new line for md file.
   
   added arguments:
     'json' - will take user input and except and Obj.
